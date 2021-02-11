@@ -19,7 +19,7 @@ app.use((req, res, next) => {
 app.use(express.static(path.join(__dirname, 'client/build')));
 
 ///category/:category'
-app.get('category/:category', (req, res) => {
+app.get('/:category', (req, res) => {
     request(
         { url: `https://bad-api-assignment.reaktor.com/v2/products/${req.params.category}` },
         (error, response, body) => {
@@ -94,7 +94,7 @@ app.get('category/:category', (req, res) => {
     )
 });
 
-const PORT = process.env.PORT ||5000;
+const PORT = process.env.PORT ||80;
 app.listen(PORT, () => {
     console.log(`server started on port ${PORT}`);
   })
