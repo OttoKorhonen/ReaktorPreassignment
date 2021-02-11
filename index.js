@@ -19,7 +19,7 @@ app.use((req, res, next) => {
 app.use(express.static(path.join(__dirname, 'client/build')));
 
 ///category/:category'
-app.get('/:category', (req, res) => {
+app.get('category/:category', (req, res) => {
     request(
         { url: `https://bad-api-assignment.reaktor.com/v2/products/${req.params.category}` },
         (error, response, body) => {

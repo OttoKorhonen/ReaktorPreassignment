@@ -16,7 +16,7 @@ export default function App() {
 
   const getItems = (props) => {
     console.log(props)
-    fetch(`http://localhost:5000/${props}`)
+    fetch(`http://localhost:5000/category/${props}`)
       .then(response => response.json())
       .then(responseData => {
         setItems(responseData)
