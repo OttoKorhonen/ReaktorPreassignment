@@ -10,15 +10,12 @@ app.use(cors())
 
 app.use((req, res, next) => {
     res.header('Access-Control-Allow-Origin', '*')
-   // res.setHeader('Access-Control-Allow-Origin', req.headers.origin); 
-    //res.setHeader("Access-Control-Allow-Headers", "Authorization, Cache-Control, Access-Control-Allow-Headers, Origin,Accept, X-Requested-With, Content-Type, Access-Control")
     res.set('Cache-control', 'public, max-age=3000')
     next();
 });
 
 app.use(express.static(path.join(__dirname, 'client/build')));
 
-///category/:category'
 app.get('/:category', (req, res) => {
     request(
         { url: `https://bad-api-assignment.reaktor.com/v2/products/${req.params.category}` },
