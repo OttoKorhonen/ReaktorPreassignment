@@ -16,7 +16,7 @@ export default function App() {
 
   const getItems = (props) => {
     console.log(props)
-    fetch(`https://reaktorpreassignment.herokuapp.com/category${props}`)
+    fetch(`http://localhost:5000/${props}`)
       .then(response => response.json())
       .then(responseData => {
         setItems(responseData)
