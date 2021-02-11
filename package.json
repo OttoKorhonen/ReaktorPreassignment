@@ -3,9 +3,13 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "engines":{
+    "npm": "7.5.2",
+    "node": "12.18.2"
+  },
   "scripts": {
     "start": "node index.js",
-    "heroku-postbuild": "cd client && yarn && yarn run build"
+    "heroku-postbuild": "cd client && npm install && npm run build"
   },
   "keywords": [],
   "author": "",
